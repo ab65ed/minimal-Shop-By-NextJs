@@ -11,8 +11,8 @@ export default function Cart() {
         return (
             <div className="container mx-auto p-4 max-w-4xl">
                 <h1 className="text-2xl font-bold mb-6">Shopping Cart</h1>
-                <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                    <p className="text-gray-600 mb-4">Your cart is empty</p>
+                <div className="bg-white p-8 rounded-lg shadow-md text-center h-[300px] flex flex-col items-center justify-center">
+                    <p className="text-gray-600 mb-4 ">Your cart is empty</p>
                     <Link href="/" className="inline-flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                         <FaArrowLeft />
                         Continue Shopping
