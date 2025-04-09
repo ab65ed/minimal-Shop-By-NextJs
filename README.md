@@ -1,6 +1,3 @@
-عالی! در ادامه یک نسخه‌ی کامل‌تر از README با بخش‌های پرکاربرد مثل نصب، ویژگی‌ها و تکنولوژی‌های استفاده‌شده برات آماده کردم:
-
----
 
 ## 🛒 Minimal E-commerce Project with Next.js
 
@@ -65,3 +62,4 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the r
 
 ---
 
+created by seyyed abedin esmaeilipor
