@@ -1,5 +1,45 @@
 import Link from "next/link";
 
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  let product;
+  
+  try {
+    const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+    product = await res.json();
+    
+    return {
+      title: `${product.title} | MinimalShop`,
+      description: product.description.substring(0, 160),
+      openGraph: {
+        title: `${product.title} | MinimalShop`,
+        description: product.description.substring(0, 160),
+        images: [
+          {
+            url: product.image,
+            width: 800,
+            height: 600,
+            alt: product.title,
+          }
+        ],
+        type: 'article',
+        tags: [product.category, 'محصولات', 'خرید آنلاین'],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${product.title} | MinimalShop`,
+        description: product.description.substring(0, 160),
+        images: [product.image],
+      },
+    };
+  } catch (error) {
+    return {
+      title: 'محصول | MinimalShop',
+      description: 'جزئیات محصول در فروشگاه مینیمال',
+    };
+  }
+}
+
 export default async function ProductDetails({ params }) {
   let { id } = params;
   let res = await fetch(`https://fakestoreapi.com/products/${id}`);
